@@ -23,13 +23,13 @@ regarding the accuracy, adequacy, validity, reliability, availability, or comple
 ---
 ### Key Infomations
 
-Login IP：192.168.1.1 
+Login IP：192.168.1.1  
 
-Password：None
+Password：None  
 
 ### Version Informations
 
-OpenWrt official v23.05.2
+OpenWrt official v23.05.3  
 
 ---
 ### Feature

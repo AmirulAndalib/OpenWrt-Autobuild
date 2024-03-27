@@ -1,0 +1,16 @@
+To be fixed. Error logs:
+
+ dae-2024-03-03-a29b998/trace/kern/trace.c:135:32: error: no member named 'ip' in 'struct pt_regs'
+         meta->pc = BPF_CORE_READ(ctx, ip);
+
+--- a/trace/kern/trace.c
++++ b/trace/kern/trace.c
+@@ -132,7 +132,7 @@ filter_l3_and_l4(struct sk_buff *skb)
+ static __always_inline void
+ set_meta(struct meta *meta, struct sk_buff *skb, struct pt_regs *ctx)
+ {
+-	meta->pc = BPF_CORE_READ(ctx, ip);
++	//meta->pc = BPF_CORE_READ(ctx, ip);
+ 	meta->skb = (__u64)skb;
+ 	meta->second_param = PT_REGS_PARM2(ctx);
+ 	meta->mark = BPF_CORE_READ(skb, mark);

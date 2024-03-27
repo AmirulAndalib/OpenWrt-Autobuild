@@ -101,6 +101,8 @@ cp -rf ../immortalwrt_luci/applications/luci-app-autoreboot ./feeds/luci/applica
 ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci/luci-app-autoreboot
 # Dae ready
 cp -rf ../immortalwrt_pkg/net/dae ./feeds/packages/net/dae
+mkdir -p feeds/packages/net/dae/patches
+cp -f ../PATCH/dae/003-trace-hack-build.patch ./feeds/packages/net/dae/patches/
 ln -sf ../../../feeds/packages/net/dae ./package/feeds/packages/dae
 wget -qO - https://github.com/immortalwrt/immortalwrt/commit/73e5679.patch | patch -p1
 wget https://github.com/immortalwrt/immortalwrt/raw/openwrt-23.05/target/linux/generic/backport-5.15/051-v5.18-bpf-Add-config-to-allow-loading-modules-with-BTF-mismatch.patch -O target/linux/generic/backport-5.15/051-v5.18-bpf-Add-config-to-allow-loading-modules-with-BTF-mismatch.patch
